@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mariane Santana · Palestrante, pesquisadora e autora best-seller</title>
+  <meta name="description" content="Palestras e conteúdo sobre saúde mental no trabalho, antiprodutivismo e direito ao descanso. Mariane Santana, autora de “Quem dá conta de tudo não dá conta de si mesmo”." />
+  <meta name="author" content="Mariane Santana" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#A84C3D" />
+  <link rel="canonical" href="https://renatoclx.github.io/marisantana/" />
+
+  <!-- Ícones -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- Compartilhamento (WhatsApp, LinkedIn, Facebook, X) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Mariane Santana" />
+  <meta property="og:title" content="Mariane Santana · Palestras e criação de conteúdo" />
+  <meta property="og:description" content="Pesquisadora, professora e palestrante. Reflexões sobre trabalho, sociedade e cultura contemporânea." />
+  <meta property="og:url" content="https://renatoclx.github.io/marisantana/" />
+  <meta property="og:image" content="https://renatoclx.github.io/marisantana/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mariane Santana — palestras e criação de conteúdo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mariane Santana · Palestras e criação de conteúdo" />
+  <meta name="twitter:description" content="Pesquisadora, professora e palestrante. Reflexões sobre trabalho, sociedade e cultura contemporânea." />
+  <meta name="twitter:image" content="https://renatoclx.github.io/marisantana/og-image.jpg" />
+
+  <!-- Dados estruturados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://renatoclx.github.io/marisantana/#mariane",
+        "name": "Mariane Santana",
+        "url": "https://renatoclx.github.io/marisantana/",
+        "image": "https://renatoclx.github.io/marisantana/og-image.jpg",
+        "jobTitle": "Pesquisadora, professora e palestrante",
+        "email": "mailto:marianesantanacontato@gmail.com",
+        "sameAs": ["https://www.instagram.com/marianecsantana"],
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Universidade de São Paulo" },
+          { "@type": "CollegeOrUniversity", "name": "PUC-RS" }
+        ],
+        "knowsAbout": ["Saúde mental no trabalho", "Antiprodutivismo", "Direito ao descanso e ao ócio", "Educação e literatura", "Interseccionalidades entre gênero, raça e classe"]
+      },
+      {
+        "@type": "Book",
+        "name": "Quem dá conta de tudo não dá conta de si mesmo",
+        "author": { "@id": "https://renatoclx.github.io/marisantana/#mariane" },
+        "datePublished": "2026",
+        "publisher": { "@type": "Organization", "name": "Editora Planeta" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Fonte do portfólio: Louis George Café. Quicksand é o fallback mais próximo no Google Fonts. -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS gerado pelo Tailwind CLI (ver tailwind.config.js) -->
+  <link rel="stylesheet" href="assets/tailwind.css" />
+
+  <style>
+    /* Se os arquivos da fonte original forem adicionados em /fonts, eles serão usados automaticamente */
+    @font-face { font-family: 'Louis George Cafe'; src: local('Louis George Cafe'), url('fonts/LouisGeorgeCafe.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'Louis George Cafe'; src: local('Louis George Cafe Bold'), url('fonts/LouisGeorgeCafe-Bold.ttf') format('truetype'); font-weight: 700; font-display: swap; }
+
+    /* Carrossel de marcas */
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { animation: marquee 40s linear infinite; }
+    .marquee-track.reverse { animation-direction: reverse; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee { mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+
+    /* Fade na base de imagens recortadas */
+    .fade-bottom { mask-image: linear-gradient(to bottom, #000 70%, transparent); -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent); }
+
+    /* Links do menu */
+    .nav-link { position: relative; padding-bottom: 2px; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -2px; height: 2px; width: 100%; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+    .nav-link:hover::after { transform: scaleX(1); }
+
+    /* Revelação ao rolar */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s ease; }
+    .reveal.is-visible { opacity: 1; transform: none; }
+
+    /* Estrelas */
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
+    .spin-slow { animation: spin-slow 40s linear infinite; }
+
+    /* Barras e gráfico de pizza */
+    .bar { width: 0; transition: width 1.6s cubic-bezier(.2,.8,.2,1); }
+    .pie { background: conic-gradient(#A84C3D calc(var(--p, 0) * 1%), #E3CDB3 0); }
+
+    /* Papel rasgado */
+    .torn { background: url('assets/papel.webp') center / cover no-repeat; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track, .spin-slow { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .bar { transition: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-cream font-sans text-terra antialiased selection:bg-terra selection:text-cream">
+
+  <!-- Estrela reutilizável -->
+  <svg width="0" height="0" class="absolute" aria-hidden="true">
+    <symbol id="star" viewBox="0 0 100 100">
+      <polygon fill="currentColor" points="50.0,1.4 55.4,19.2 66.3,5.1 65.8,22.6 79.7,14.6 71.8,31.7 93.2,25.0 81.0,38.7 97.7,41.6 79.4,50.0 93.4,57.6 79.0,60.5 89.0,72.5 73.6,69.8 79.7,85.4 64.5,75.0 65.8,93.4 55.8,82.7 50.0,96.9 44.4,82.0 34.3,93.2 35.8,74.6 20.8,84.8 25.8,70.3 8.3,74.1 23.5,59.6 5.9,57.8 19.2,50.0 5.0,42.1 18.7,38.6 10.4,27.1 24.3,28.4 19.4,13.5 33.6,21.6 33.8,5.5 44.2,16.9" />
+    </symbol>
+  </svg>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 lg:px-10">
+      <a href="#inicio" class="text-xl font-bold text-cream transition-colors md:text-2xl" data-nav-text>Mariane Santana</a>
+      <ul class="hidden gap-6 text-base font-bold text-cream lg:flex xl:gap-8 xl:text-lg" data-nav-text>
+        <li><a href="#minibio" class="nav-link">minibio</a></li>
+        <li><a href="#livro" class="nav-link">livro</a></li>
+        <li><a href="#numeros" class="nav-link">números</a></li>
+        <li><a href="#servicos" class="nav-link">serviços</a></li>
+        <li><a href="#temas" class="nav-link">temas</a></li>
+        <li><a href="#entrevistas" class="nav-link">entrevistas</a></li>
+      </ul>
+      <a href="#contato" class="rounded-full bg-cream px-6 py-2.5 text-base font-bold text-terra shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="relative min-h-screen overflow-hidden bg-terra text-cream">
+      <!-- forma estrelada -->
+      <svg class="pointer-events-none absolute -right-[200px] top-[96px] hidden h-[1000px] w-[1000px] text-cream lg:block" aria-hidden="true">
+        <use href="#star" />
+      </svg>
+
+      <div class="relative mx-auto grid min-h-screen max-w-7xl items-center gap-8 px-6 pt-24 lg:grid-cols-2 lg:px-10 lg:pt-0">
+        <div class="reveal z-10">
+          <p class="mb-8 text-sm md:text-base">
+            <span class="tracking-label">portfólio</span>. palestras e criação de conteúdo
+          </p>
+          <h1 class="text-6xl font-bold leading-[1.05] sm:text-7xl lg:text-8xl">Mariane<br />Santana</h1>
+          <p class="mt-8 max-w-md text-lg leading-relaxed text-cream/90">
+            Pesquisadora, professora e palestrante. Reflexões sobre trabalho, sociedade e cultura contemporânea.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#contato" class="rounded-full bg-cream px-7 py-3 font-bold text-terra transition hover:-translate-y-0.5 hover:shadow-lg">Leve uma palestra para sua organização</a>
+            <a href="https://www.instagram.com/marianecsantana" target="_blank" rel="noopener" class="rounded-full border border-cream/60 px-7 py-3 font-bold transition hover:bg-cream/10">@marianecsantana</a>
+          </div>
+        </div>
+        <div class="relative flex justify-center self-end lg:justify-end">
+          <img src="assets/hero.webp" width="621" height="780" fetchpriority="high" alt="Retrato de Mariane Santana em preto e branco" class="relative z-10 w-4/5 max-w-md lg:h-[min(72vh,740px)] lg:w-auto lg:max-w-none" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MINIBIO -->
+    <section id="minibio" class="bg-cream">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2 lg:gap-20 lg:px-10 lg:py-32">
+        <div class="reveal relative">
+          <img src="assets/minibio.jpg" alt="Mariane Santana segurando seu livro em frente a uma estante" class="aspect-[4/5] w-full rounded-[2rem] object-cover shadow-2xl" loading="lazy" />
+          <svg class="spin-slow absolute -bottom-10 -right-6 h-28 w-28 text-terra md:h-36 md:w-36" aria-hidden="true"><use href="#star" /></svg>
+        </div>
+        <div class="reveal">
+          <h2 class="text-3xl tracking-label">minibio</h2>
+          <p class="mt-1 text-sm">@marianecsantana</p>
+          <div class="mt-10 space-y-5 text-lg leading-relaxed">
+            <p>Mariane Santana é pesquisadora de estudos culturais e urbanos, professora e palestrante.</p>
+            <p>Pós-graduada em Psicologia Organizacional e Gestão de Pessoas pela PUC-RS, com pesquisa sobre Saúde Mental do Trabalhador. Mestra em Teoria e História da Arquitetura e do Urbanismo pela USP. Fundadora da comunidade de estudos <strong>Pausa Crítica</strong> e autora do livro <em>“Quem dá conta de tudo não dá conta de si mesmo”</em> (2026).</p>
+            <p>Com mais de 400 mil seguidores nas redes sociais, desenvolve reflexões sobre trabalho, sociedade e cultura contemporânea.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVRO -->
+    <section id="livro" class="relative overflow-hidden bg-cream py-16 lg:py-24">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="torn relative grid items-center gap-12 rounded-sm px-6 pb-32 pt-16 text-cream md:px-14 lg:grid-cols-[1.1fr_1fr] lg:py-20">
+          <div class="reveal flex items-end justify-center gap-6">
+            <img src="assets/veja.jpg" alt="Lista de livros mais vendidos da Veja com o livro de Mariane Santana em 10º lugar" class="w-[45%] max-w-[260px] -rotate-3 rounded shadow-2xl" loading="lazy" />
+            <img src="assets/livro.webp" alt="Capa do livro Quem dá conta de tudo não dá conta de si mesmo" class="w-[50%] max-w-[300px] rotate-2 drop-shadow-2xl transition duration-500 hover:rotate-0 hover:scale-105" loading="lazy" />
+          </div>
+          <div class="reveal space-y-5 text-lg leading-relaxed">
+            <h2 class="text-sm tracking-label">best-seller · Editora Planeta</h2>
+            <p>Autora de <strong>“Quem Dá Conta de Tudo Não Dá Conta de Si Mesmo”</strong>, livro de não-ficção que entrou na lista dos mais vendidos do país, publicado pela Editora Planeta (2026).</p>
+            <p>A obra discute o esgotamento causado pela cultura de produtividade extrema. Em seu lugar, Mariane Santana propõe uma reflexão sobre a importância de estabelecer limites, recusar uma vida voltada só para produzir, e reconquistar espaço para o descanso e o ócio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARCAS -->
+    <section id="marcas" class="overflow-hidden bg-white py-24">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <h2 class="reveal max-w-2xl text-4xl font-bold leading-tight md:text-5xl">Empresas que confiam no meu trabalho</h2>
+      </div>
+      <div class="mx-auto mt-14 grid max-w-7xl grid-cols-[minmax(0,1fr)] items-center gap-12 px-6 lg:grid-cols-[440px_minmax(0,1fr)] lg:px-10">
+        <div class="reveal">
+          <img src="assets/mariane-livro.jpg" alt="Mariane Santana folheando seu livro" class="aspect-[4/5] w-full max-w-md rounded-[2rem] object-cover shadow-2xl lg:max-w-none" loading="lazy" />
+        </div>
+
+        <div class="min-w-0 space-y-14">
+          <div class="marquee overflow-hidden">
+            <div class="marquee-track flex w-max items-center" data-logos="0"></div>
+          </div>
+          <div class="marquee overflow-hidden">
+            <div class="marquee-track reverse flex w-max items-center" data-logos="1"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NÚMEROS -->
+    <section id="numeros" class="relative overflow-hidden bg-terra py-24 text-cream lg:py-32">
+      <svg class="spin-slow pointer-events-none absolute -left-32 -top-32 h-[420px] w-[420px] text-terra-dark" aria-hidden="true"><use href="#star" /></svg>
+      <svg class="spin-slow pointer-events-none absolute -bottom-40 -right-32 h-[480px] w-[480px] text-terra-dark" aria-hidden="true"><use href="#star" /></svg>
+
+      <div class="relative mx-auto max-w-5xl px-6 text-center">
+        <h2 class="reveal text-lg tracking-label">alcance nas redes</h2>
+        <div class="mt-14 grid items-center gap-14 md:grid-cols-[1fr_auto_1fr] md:gap-10">
+          <div class="reveal">
+            <p class="text-8xl font-bold leading-none lg:text-9xl">+<span data-count="400" data-suffix="k">0</span></p>
+            <p class="mt-4 text-xl text-cream/90">seguidores</p>
+          </div>
+          <svg class="mx-auto hidden h-20 w-20 text-cream md:block" aria-hidden="true"><use href="#star" /></svg>
+          <div class="reveal">
+            <p class="text-8xl font-bold leading-none lg:text-9xl">+<span data-count="25" data-suffix="M">0</span></p>
+            <p class="mt-4 text-xl text-cream/90">visualizações mensais</p>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/marianecsantana" target="_blank" rel="noopener" class="reveal mt-16 inline-flex items-center gap-3 rounded-full bg-cream px-8 py-4 text-xl font-bold text-terra transition hover:-translate-y-0.5 hover:shadow-lg">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          @marianecsantana
+        </a>
+      </div>
+    </section>
+
+    <!-- PÚBLICO -->
+    <section id="publico" class="bg-cream py-24">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="rounded-[2rem] bg-white/60 p-8 md:p-14">
+          <div class="flex flex-wrap items-end justify-between gap-8">
+            <div class="reveal">
+              <h2 class="text-3xl tracking-label">público</h2>
+              <p class="mt-1 text-sm">@marianecsantana</p>
+            </div>
+            <div class="reveal flex items-center gap-4">
+              <img src="assets/mapa-brasil.png" alt="Mapa do Brasil" class="w-24 md:w-32" loading="lazy" />
+              <p class="text-2xl font-bold"><span data-count="95.5" data-decimals="1">0</span>% <span class="text-base font-normal tracking-label">brasil</span></p>
+            </div>
+          </div>
+
+          <div class="mt-14 grid items-center gap-16 md:grid-cols-2">
+            <!-- gênero -->
+            <div class="reveal flex items-center justify-center gap-3 sm:gap-6">
+              <div class="text-right">
+                <p>homens</p>
+                <p class="text-2xl font-bold"><span data-count="37">0</span>%</p>
+              </div>
+              <div class="pie h-32 w-32 flex-none rounded-full shadow-inner sm:h-44 sm:w-44 md:h-52 md:w-52" data-pie="63" style="--p:0"></div>
+              <div>
+                <p>mulheres</p>
+                <p class="text-2xl font-bold"><span data-count="63">0</span>%</p>
+              </div>
+            </div>
+            <!-- faixas etárias (proporções aproximadas do portfólio) -->
+            <div class="reveal">
+              <ul class="space-y-3">
+                <li class="grid grid-cols-[60px_1fr] items-center gap-4"><span class="text-right">55 +</span><span class="h-3 rounded-r bg-gradient-to-r from-sand to-terra bar" data-bar="40"></span></li>
+                <li class="grid grid-cols-[60px_1fr] items-center gap-4"><span class="text-right">45-54</span><span class="h-3 rounded-r bg-gradient-to-r from-sand to-terra bar" data-bar="74"></span></li>
+                <li class="grid grid-cols-[60px_1fr] items-center gap-4"><span class="text-right">35-44</span><span class="h-3 rounded-r bg-gradient-to-r from-sand to-terra bar" data-bar="100"></span></li>
+                <li class="grid grid-cols-[60px_1fr] items-center gap-4"><span class="text-right">25-34</span><span class="h-3 rounded-r bg-gradient-to-r from-sand to-terra bar" data-bar="80"></span></li>
+                <li class="grid grid-cols-[60px_1fr] items-center gap-4"><span class="text-right">18-24</span><span class="h-3 rounded-r bg-gradient-to-r from-sand to-terra bar" data-bar="14"></span></li>
+              </ul>
+              <p class="mt-4 pl-[76px] text-sm">faixas etárias</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="relative overflow-hidden bg-cream pb-8 lg:pb-12">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-6 pt-16 lg:grid-cols-[1fr_1.3fr] lg:px-10">
+        <div class="relative">
+          <div class="reveal lg:absolute lg:left-0 lg:top-4">
+            <h2 class="text-3xl tracking-label">serviços</h2>
+            <p class="mt-1 text-sm">@marianecsantana</p>
+          </div>
+          <div class="relative mx-auto mt-24 w-11/12 max-w-md lg:mt-20">
+            <!-- círculo de fundo -->
+            <div class="absolute inset-x-[-12%] bottom-[8%] aspect-square rounded-full bg-gradient-to-b from-cream-dark to-cream" aria-hidden="true"></div>
+            <svg class="spin-slow absolute -left-10 bottom-1/3 z-10 h-24 w-24 text-terra" aria-hidden="true"><use href="#star" /></svg>
+            <img src="assets/servicos.webp" alt="Mariane Santana sorrindo" class="fade-bottom relative w-full" loading="lazy" />
+          </div>
+        </div>
+        <div class="reveal relative rounded-[3rem] bg-gradient-to-br from-terra-light via-terra to-terra-dark px-8 py-14 text-cream shadow-2xl shadow-terra/30 md:px-14">
+          <ul class="space-y-8 text-xl leading-snug">
+            <li class="flex gap-4"><svg class="mt-1 h-6 w-6 flex-none text-cream" aria-hidden="true"><use href="#star" /></svg><span>Apresentação de palestra ou aula<br /><span class="text-cream/80">(virtual ou presencial)</span></span></li>
+            <li class="flex gap-4"><svg class="mt-1 h-6 w-6 flex-none text-cream" aria-hidden="true"><use href="#star" /></svg><span>Produção de conteúdo especializado em redes sociais e outras mídias <span class="text-cream/80">(vídeos, artigos e outros)</span></span></li>
+            <li class="flex gap-4"><svg class="mt-1 h-6 w-6 flex-none text-cream" aria-hidden="true"><use href="#star" /></svg><span>Participação em demais eventos, colóquios e feiras literárias</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMAS -->
+    <section id="temas" class="bg-cream py-24 lg:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="reveal">
+          <h2 class="text-3xl leading-snug tracking-label">universo<br />de temas</h2>
+          <p class="mt-1 text-sm">@marianecsantana</p>
+        </div>
+
+        <div class="mt-14 grid items-center gap-10 lg:grid-cols-[1fr_auto_1fr]">
+          <ul class="space-y-10 text-2xl">
+            <li class="reveal flex items-start gap-4"><svg class="h-12 w-12 flex-none text-terra" aria-hidden="true"><use href="#star" /></svg>saúde mental e qualidade de vida no trabalho</li>
+            <li class="reveal flex items-start gap-4"><svg class="h-12 w-12 flex-none text-terra" aria-hidden="true"><use href="#star" /></svg>antiprodutivismo</li>
+          </ul>
+          <div class="reveal mx-auto w-full max-w-sm overflow-hidden rounded-t-full shadow-2xl">
+            <img src="assets/flusp.jpg" alt="Mariane Santana em conversa literária na FLUSP 2026" class="aspect-[4/5] w-full object-cover" loading="lazy" />
+          </div>
+          <ul class="space-y-10 text-2xl">
+            <li class="reveal flex items-start gap-4"><svg class="h-12 w-12 flex-none text-terra" aria-hidden="true"><use href="#star" /></svg>direito ao descanso e ao ócio</li>
+            <li class="reveal flex items-start gap-4"><svg class="h-12 w-12 flex-none text-terra" aria-hidden="true"><use href="#star" /></svg>educação e literatura</li>
+            <li class="reveal flex items-start gap-4"><svg class="h-12 w-12 flex-none text-terra" aria-hidden="true"><use href="#star" /></svg>interseccionalidades entre gênero, raça e classe</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTREVISTAS -->
+    <section id="entrevistas" class="bg-terra text-cream">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-[1fr_1.4fr] lg:px-10 lg:py-32">
+        <div class="reveal flex flex-col gap-10">
+          <p class="text-lg">Clique nos vídeos para conhecer mais sobre o meu trabalho</p>
+          <h2 class="text-5xl font-bold md:text-6xl">entrevistas</h2>
+        </div>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+          <button type="button" class="reveal group text-left" data-video="v8nDww9yd6k">
+            <div class="relative overflow-hidden rounded-3xl">
+              <img src="assets/entrevista-operamundi.jpg" alt="" class="aspect-video w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+              <span class="absolute inset-0 grid place-items-center bg-black/20 transition group-hover:bg-black/35">
+                <span class="grid h-16 w-16 place-items-center rounded-full bg-cream text-terra shadow-lg transition group-hover:scale-110">
+                  <svg class="ml-1 h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </span>
+            </div>
+            <p class="mt-4 font-bold">Nós precisamos ser mais produtivos?</p>
+            <p class="text-sm text-cream/80">Opera Mundi · Programa 20 Minutos</p>
+          </button>
+          <button type="button" class="reveal group text-left" data-video="afhA-RpoqU0">
+            <div class="relative overflow-hidden rounded-3xl">
+              <img src="assets/entrevista-2.jpg" alt="" class="aspect-video w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+              <span class="absolute inset-0 grid place-items-center bg-black/20 transition group-hover:bg-black/35">
+                <span class="grid h-16 w-16 place-items-center rounded-full bg-cream text-terra shadow-lg transition group-hover:scale-110">
+                  <svg class="ml-1 h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </span>
+            </div>
+            <p class="mt-4 font-bold">#PapodeAutor com Mariane Santana</p>
+            <p class="text-sm text-cream/80">Planeta de Livros Brasil</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORES -->
+    <section id="valores" class="bg-cream py-24 lg:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="reveal">
+          <h2 class="text-3xl tracking-label">nossos valores</h2>
+          <p class="mt-1 text-sm">@marianecsantana</p>
+        </div>
+        <div class="mt-14 grid gap-6 md:grid-cols-2">
+          <article class="reveal rounded-3xl bg-terra p-10 text-cream transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="flex items-center gap-4"><svg class="h-10 w-10 flex-none" aria-hidden="true"><use href="#star" /></svg><h3 class="text-xl font-bold">Ética e sigilo</h3></div>
+            <p class="mt-5 leading-relaxed text-cream/90">Prezamos pela segurança das informações compartilhadas antes, durante e depois da nossa parceria.</p>
+          </article>
+          <article class="reveal rounded-3xl bg-terra p-10 text-cream transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="flex items-center gap-4"><svg class="h-10 w-10 flex-none" aria-hidden="true"><use href="#star" /></svg><h3 class="text-xl font-bold">Responsabilidade social e equidade</h3></div>
+            <p class="mt-5 leading-relaxed text-cream/90">Temos o compromisso de contribuir com o bem-estar da sociedade, respeitando todas as diferenças. Celebramos a diversidade e defendemos a equidade.</p>
+          </article>
+          <article class="reveal rounded-3xl bg-terra p-10 text-cream transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="flex items-center gap-4"><svg class="h-10 w-10 flex-none" aria-hidden="true"><use href="#star" /></svg><h3 class="text-xl font-bold">Singularidade</h3></div>
+            <p class="mt-5 leading-relaxed text-cream/90">Cada projeto é pensado de maneira única. Queremos conhecer a cultura da sua organização e as necessidades específicas do seu contexto.</p>
+          </article>
+          <article class="reveal rounded-3xl bg-terra p-10 text-cream transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="flex items-center gap-4"><svg class="h-10 w-10 flex-none" aria-hidden="true"><use href="#star" /></svg><h3 class="text-xl font-bold">Empatia e colaboração</h3></div>
+            <p class="mt-5 leading-relaxed text-cream/90">Nossas trocas são embasadas na segurança psicológica. Acreditamos que a empatia e o espírito colaborativo são elementos essenciais para equipes saudáveis.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="relative overflow-hidden bg-terra text-cream">
+      <svg class="spin-slow pointer-events-none absolute -bottom-40 -left-40 h-[480px] w-[480px] text-terra-dark" aria-hidden="true"><use href="#star" /></svg>
+      <div class="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1fr_1.5fr] lg:px-10 lg:py-32">
+        <h2 class="reveal text-3xl leading-snug tracking-label">entre em<br />contato</h2>
+        <div class="reveal space-y-6 text-lg leading-relaxed">
+          <p>Durante a definição do trabalho, vamos dialogar para encontrar a melhor maneira de atender aos nossos objetivos.</p>
+          <p>Minha missão é construir singularidade em cada trabalho, para que a sua mensagem chegue às pessoas com assertividade, acolhimento e responsabilidade.</p>
+          <div class="flex flex-wrap gap-4 pt-6">
+            <a href="mailto:marianesantanacontato@gmail.com" class="inline-flex items-center gap-3 rounded-full bg-cream px-7 py-3 font-bold text-terra transition hover:-translate-y-0.5 hover:shadow-lg">
+              <svg class="h-6 w-6" aria-hidden="true"><use href="#star" /></svg>
+              marianesantanacontato@gmail.com
+            </a>
+            <a href="https://www.instagram.com/marianecsantana" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-cream/60 px-7 py-3 font-bold transition hover:bg-cream/10">@marianecsantana</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-terra-dark py-6 text-center text-sm text-cream/70">
+    © <span id="year"></span> Mariane Santana · palestras e criação de conteúdo
+  </footer>
+
+  <!-- Modal de vídeo -->
+  <div id="video-modal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 p-4" role="dialog" aria-modal="true">
+    <div class="relative w-full max-w-4xl">
+      <button type="button" id="video-close" class="absolute -top-12 right-0 text-4xl leading-none text-cream" aria-label="Fechar">&times;</button>
+      <div class="aspect-video overflow-hidden rounded-2xl bg-black">
+        <iframe id="video-frame" class="h-full w-full" title="Entrevista" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ----- Marcas (carrossel) -----
+    const logos = [
+      ['icl', 'ICL'], ['intercept', 'The Intercept Brasil'], ['oxfam', 'Oxfam Brasil'],
+      ['astrazeneca', 'AstraZeneca'], ['bracell', 'Bracell'], ['justica-do-trabalho', 'Justiça do Trabalho'],
+      ['zerezes', 'Zerezes'], ['insider', 'Insider'],
+      ['psicotropica', 'Psicotrópica'], ['350-brasil', '350.org Brasil'], ['sesc', 'Sesc'],
+      ['planeta', 'Planeta'], ['amparo', 'Amparo'], ['sindifisco', 'Sindifisco Minas Gerais'], ['politica-essencial', 'Política Essencial'],
+    ];
+    const rows = [logos.slice(0, 8), logos.slice(8)];
+    document.querySelectorAll('[data-logos]').forEach((track) => {
+      const items = rows[+track.dataset.logos];
+      // duplicado para o loop infinito
+      const html = [...items, ...items].map(([file, name], i) => `
+        <div class="mx-6 flex h-24 w-44 flex-none items-center justify-center md:mx-10" ${i >= items.length ? 'aria-hidden="true"' : ''}>
+          <img src="assets/logos/${file}.png" alt="${i >= items.length ? '' : name}" class="max-h-16 max-w-full object-contain mix-blend-multiply transition duration-300 hover:scale-110" loading="lazy" />
+        </div>`).join('');
+      track.innerHTML = html;
+    });
+
+    // ----- Contagem dos números -----
+    const fmt = (n, d) => n.toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d });
+    function countUp(el) {
+      const target = parseFloat(el.dataset.count);
+      const decimals = +(el.dataset.decimals || 0);
+      const suffix = el.dataset.suffix || '';
+      const duration = 2000;
+      const start = performance.now();
+      const step = (now) => {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = fmt(target * eased, decimals) + suffix;
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+    function animatePie(el) {
+      const target = +el.dataset.pie;
+      const start = performance.now();
+      const step = (now) => {
+        const t = Math.min((now - start) / 1600, 1);
+        el.style.setProperty('--p', target * (1 - Math.pow(1 - t, 3)));
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        if (el.dataset.count) countUp(el);
+        else if (el.dataset.pie) animatePie(el);
+        else if (el.dataset.bar) el.style.width = el.dataset.bar + '%';
+        else el.classList.add('is-visible');
+        io.unobserve(el);
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.reveal, [data-count], [data-pie], [data-bar]').forEach((el) => io.observe(el));
+
+    // ----- Nav muda de cor ao rolar -----
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      const scrolled = window.scrollY > window.innerHeight * 0.8;
+      nav.classList.toggle('bg-cream/95', scrolled);
+      nav.classList.toggle('shadow-md', scrolled);
+      nav.classList.toggle('backdrop-blur', scrolled);
+      nav.querySelectorAll('[data-nav-text]').forEach((n) => {
+        n.classList.toggle('text-cream', !scrolled);
+        n.classList.toggle('text-terra', scrolled);
+      });
+      const cta = nav.querySelector('a[href="#contato"]');
+      cta.classList.toggle('bg-terra', scrolled); cta.classList.toggle('text-cream', scrolled);
+      cta.classList.toggle('bg-cream', !scrolled); cta.classList.toggle('text-terra', !scrolled);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // ----- Modal de vídeo -----
+    const modal = document.getElementById('video-modal');
+    const frame = document.getElementById('video-frame');
+    const closeModal = () => { modal.classList.add('hidden'); modal.classList.remove('flex'); frame.src = ''; };
+    document.querySelectorAll('[data-video]').forEach((btn) => btn.addEventListener('click', () => {
+      frame.src = `https://www.youtube.com/embed/${btn.dataset.video}?autoplay=1`;
+      modal.classList.remove('hidden'); modal.classList.add('flex');
+    }));
+    document.getElementById('video-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

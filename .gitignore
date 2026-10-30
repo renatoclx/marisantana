@@ -1,0 +1,7 @@
+# Material original (não publicar)
+*.pdf
+
+# Arquivos temporários
+_test.html
+_og.html
+node_modules/
